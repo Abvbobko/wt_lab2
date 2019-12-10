@@ -5,9 +5,6 @@
             <login>admin</login>
             <passwordHash>92668751</passwordHash>
             <admin>true</admin>
-            <tickets>
-                <ticketID>123</ticketID>
-            </tickets>
         </user>
     </Users>
     <Tickets>

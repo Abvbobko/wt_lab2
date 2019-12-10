@@ -12,13 +12,6 @@
                                         <xsd:element name="login" type="xsd:string"/>
                                         <xsd:element name="passwordHash" type="xsd:string"/>
                                         <xsd:element name="admin" type="xsd:boolean"/>
-                                        <xsd:element name="tickets">
-                                            <xsd:complexType>
-                                                <xsd:sequence>
-                                                    <xsd:element name="ticketID" type="xsd:string" maxOccurs="unbounded"/>
-                                                </xsd:sequence>
-                                            </xsd:complexType>
-                                        </xsd:element>
                                     </xsd:sequence>
                                     <xsd:attribute name="id" type="xsd:int"/>
                                 </xsd:complexType>
