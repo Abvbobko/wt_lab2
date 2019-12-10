@@ -8,6 +8,8 @@ public class Pilot implements Serializable, Comparable {
     private String middleName;
     private float experience;
 
+    Pilot() {}
+
     Pilot(String name, String surname, String middleName, float experience){
         this.name = name;
         this.surname = surname;

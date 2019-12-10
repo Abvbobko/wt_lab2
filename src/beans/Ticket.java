@@ -2,32 +2,50 @@ package beans;
 
 import java.io.Serializable;
 
-public class Ticket implements Serializable, Comparable {
+public class Ticket implements Serializable {
 
-    private Flight flight;
-    //сделать привязку к flightID (flight Hash)
+    private int flightID;
+    private int userID;
+    private int place;
+    private int price;
 
-    public void setFlight(Flight flight) {
-        this.flight = flight;
+
+    public void setPlace(int place) {
+        this.place = place;
     }
 
-    public Flight getFlight() {
-        return flight;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getFlightID() {
+        return flightID;
     }
 
     public Ticket(){ }
 
-    public Ticket(Flight flight ){
-        this.flight = flight;
+    public void setFlightID(int flightID) {
+        this.flightID = flightID;
     }
 
-    @Override
-    public String toString(){
-        return "_TICKET_\n" + flight.toString();
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return flight.compareTo(((Ticket) o).getFlight());
+    public int getUserID() {
+        return userID;
     }
+
+    public Ticket(int flightID){
+        this.flightID = flightID;
+    }
+
 }
