@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AirlineData>
+    <Users>
+        <user id="1">
+            <login>admin</login>
+            <passwordHash>92668751</passwordHash>
+            <admin>true</admin>
+            <tickets>
+                <ticketID>123</ticketID>
+            </tickets>
+        </user>
+    </Users>
+    <Tickets>
+        <ticket id="123">
+            <price>123</price>
+            <place>123</place>
+            <userID>1</userID>
+            <flightID>123</flightID>
+        </ticket>
+    </Tickets>
+    <Flights>
+        <flight id="123">
+            <dateOfFlight>2019-12-12</dateOfFlight>
+            <departureTime>12:40</departureTime>
+            <arrivalTime>14:40</arrivalTime>
+            <fromCity>Minsk</fromCity>
+            <toCity>London</toCity>
+            <pilotID>123</pilotID>
+            <planeID>123</planeID>
+        </flight>
+    </Flights>
+    <Pilots>
+        <pilot id="123">
+            <experience>3</experience>
+            <name>Name</name>
+            <surname>Surname</surname>
+            <middleName>Middlenamovich</middleName>
+        </pilot>
+    </Pilots>
+    <Planes>
+        <plane id="123">
+            <numberOfSeats>123</numberOfSeats>
+        </plane>
+    </Planes>
+</AirlineData>
