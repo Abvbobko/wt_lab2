@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="AirlineData">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Users">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="user" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>                                        
+                                        <xsd:element name="login" type="xsd:string"/>
+                                        <xsd:element name="passwordHash" type="xsd:string"/>                                                                        
+                                        <xsd:element name="tickets">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="ticketID" type="xsd:int" maxOccurs="unbounded"/>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="id" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>                        
+                <xsd:element name="Tickets">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ticket" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>              
+                                        <xsd:element name="price" type="xsd:int"/>                                                          
+                                        <xsd:element name="place" type="xsd:int"/>                                    
+                                        <xsd:element name="userID" type="xsd:int"/>                                    
+                                        <xsd:element name="flightID" type="xsd:int"/>                                    
+                                    </xsd:sequence>
+                                    <xsd:attribute name="id" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>                                
+                <xsd:element name="Flights">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="flight" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>                                        
+                                        <xsd:element name="dateOfFlight" type="xsd:string"/>
+                                        <xsd:element name="departureTime" type="xsd:string"/>
+                                        <xsd:element name="arrivalTime" type="xsd:string"/>
+                                        <xsd:element name="fromCity" type="xsd:string"/>
+                                        <xsd:element name="toCity" type="xsd:string"/>                                    
+                                        <xsd:element name="pilotID" type="xsd:int"/>                                    
+                                        <xsd:element name="planeID" type="xsd:int"/>                                    
+                                    </xsd:sequence>
+                                    <xsd:attribute name="id" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Pilots">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="pilot" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="experience" type="xsd:float"/>
+                                        <xsd:element name="name" type="xsd:string"/>
+                                        <xsd:element name="surname" type="xsd:string"/>
+                                        <xsd:element name="middleName" type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="id" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Planes">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="plane" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>                                        
+                                        <xsd:element name="numberOfSeats" type="xsd:int"/>                                    
+                                    </xsd:sequence>
+                                    <xsd:attribute name="id" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
