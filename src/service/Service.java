@@ -8,6 +8,8 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
+
+import dao.Dao;
 import org.xml.sax.SAXException;
 
 public class Service {
@@ -24,4 +26,10 @@ public class Service {
         }
         return true;
     }
+
+    public void connectDB() {
+        Dao dao = new Dao();
+        dao.dbConnect();
+    }
+
 }
