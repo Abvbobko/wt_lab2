@@ -6,9 +6,19 @@ public class User implements Serializable, Comparable {
 
     private boolean admin = false;
     private String login;
+    private String passwordHash;
+    private int id;
 
     public boolean isAdmin(){
         return admin;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setLogin(String login) {
@@ -22,8 +32,6 @@ public class User implements Serializable, Comparable {
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }
-
-    private String passwordHash;
 
     public User(){}
 
