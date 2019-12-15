@@ -13,6 +13,7 @@ import dao.DAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
+import service.migration.*;
 
 public class Service {
 
@@ -50,6 +51,16 @@ public class Service {
     }
 
     public void migrateToDB() {
+        UsersMigration usersMigration = UsersMigration.getInstance();
+        FlightsMigration flightsMigration = FlightsMigration.getInstance();
+        PilotsMigration pilotsMigration = PilotsMigration.getInstance();
+        PlanesMigration planesMigration = PlanesMigration.getInstance();
+        TicketsMigration ticketsMigration = TicketsMigration.getInstance();
 
+        usersMigration.migrate(dao.getUsers());
+        flightsMigration.migrate(dao.getFlights());
+        pilotsMigration.migrate(dao.getPilots());
+        planesMigration.migrate(dao.getPlanes());
+        ticketsMigration.migrate(dao.getTickets());
     }
 }
