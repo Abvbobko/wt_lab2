@@ -26,7 +26,7 @@ public class XmlReader {
     private List<Pilot> pilots;
     private List<Ticket> tickets;
 
-    public XmlReader(String file) {
+    XmlReader(String file) {
         logger.info("Xml reader starts parsing file - " + file + ".");
         try {
             userParser = new UserParser(file);

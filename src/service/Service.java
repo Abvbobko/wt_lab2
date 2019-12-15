@@ -10,6 +10,8 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
 import dao.DAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 public class Service {
@@ -21,16 +23,17 @@ public class Service {
     }
 
     private DAO dao = DAO.getInstance();
+    private static final Logger logger = LogManager.getLogger();
 
-    public Boolean validate(String xsdPath, String xmlPath){
+    public Boolean validateXml(){
         try {
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new File(xsdPath));
+            Schema schema = factory.newSchema(new File(DAO.XSD_FILE_PATH));
             Validator validator = schema.newValidator();
-            validator.validate(new StreamSource(new File(xmlPath)));
+            validator.validate(new StreamSource(new File(DAO.XML_FILE_PATH)));
         } catch (IOException | SAXException e) {
-            System.out.println("Exception: "+e.getMessage());
+            logger.error(e.getMessage());
             return false;
         }
         return true;
@@ -38,8 +41,10 @@ public class Service {
 
     public void connectDB() {
         dao.connectToDB();
-        //DB dao = new DB();
-        ;
+    }
+
+    public void closeDB() {
+        dao.closeDBConnection();
     }
 
 }
