@@ -8,7 +8,15 @@ public class Ticket implements Serializable {
     private int userID;
     private int place;
     private int price;
+    private int id;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setPlace(int place) {
         this.place = place;

@@ -10,6 +10,15 @@ public class Flight implements Serializable, Comparable {
     private LocalTime arrivalTime;
     private String fromCity;
     private String toCity;
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setDateOfFlight(String dateOfFlight) {
         this.dateOfFlight = LocalDate.parse(dateOfFlight);
