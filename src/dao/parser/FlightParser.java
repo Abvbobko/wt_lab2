@@ -21,7 +21,7 @@ public class FlightParser {
     private List<Flight> flights;
 
     enum FlightTagName {
-        DATE_OF_FLIGHT, DEPARTURE_TIME, ARRIVAL_TIME, FROM_CITY, TO_CITY
+        DATE_OF_FLIGHT, DEPARTURE_TIME, ARRIVAL_TIME, FROM_CITY, TO_CITY, PLANE_ID
     }
 
     public FlightParser(String filepath) throws DataSourceException {
@@ -76,6 +76,9 @@ public class FlightParser {
                             break;
                         case TO_CITY:
                             flight.setToCity(text);
+                            break;
+                        case PLANE_ID:
+                            flight.setPlaneID(Integer.parseInt(text));
                             break;
                     }
                 } catch (Exception e) {

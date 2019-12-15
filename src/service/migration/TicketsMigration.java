@@ -14,14 +14,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TicketMigration {
+public class TicketsMigration {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final TicketMigration instance = new TicketMigration();
+    private static final TicketsMigration instance = new TicketsMigration();
 
-    private TicketMigration() { }
+    private TicketsMigration() { }
 
-    public static TicketMigration getInstance() {
+    public static TicketsMigration getInstance() {
         return instance;
     }
 

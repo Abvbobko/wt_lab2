@@ -6,7 +6,7 @@ public class Pilot implements Serializable, Comparable {
     private String name;
     private String surname;
     private String middleName;
-    private float experience;
+    private int experience;
     private int id;
 
     public int getId() {
@@ -19,7 +19,7 @@ public class Pilot implements Serializable, Comparable {
 
     public Pilot() {}
 
-    public Pilot(String name, String surname, String middleName, float experience){
+    public Pilot(String name, String surname, String middleName, int experience){
         this.name = name;
         this.surname = surname;
         this.middleName = middleName;
@@ -38,7 +38,7 @@ public class Pilot implements Serializable, Comparable {
         this.middleName = middleName;
     }
 
-    public void setExperience(float experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
@@ -59,12 +59,12 @@ public class Pilot implements Serializable, Comparable {
         return String.format("%s %c.%c.", surname, name.charAt(0), middleName.charAt(0));
     }
 
-    public float getExperience(){
+    public int getExperience(){
         return experience;
     }
 
     public void incExperience(){
-        this.experience += 0.5;
+        this.experience += 1;
     }
 
     @Override

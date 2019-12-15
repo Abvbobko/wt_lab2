@@ -11,9 +11,18 @@ public class Flight implements Serializable, Comparable {
     private String fromCity;
     private String toCity;
     private int id;
+    private int planeID;
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setPlaneID(int planeID) {
+        this.planeID = planeID;
+    }
+
+    public int getPlaneID() {
+        return planeID;
     }
 
     public int getId() {

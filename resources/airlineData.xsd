@@ -62,7 +62,7 @@
                             <xsd:element name="pilot" maxOccurs="unbounded">
                                 <xsd:complexType>
                                     <xsd:sequence>
-                                        <xsd:element name="experience" type="xsd:float"/>
+                                        <xsd:element name="experience" type="xsd:int"/>
                                         <xsd:element name="name" type="xsd:string"/>
                                         <xsd:element name="surname" type="xsd:string"/>
                                         <xsd:element name="middleName" type="xsd:string"/>
