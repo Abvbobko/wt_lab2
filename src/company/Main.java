@@ -11,11 +11,13 @@ public class Main {
         service.validateXml();
 
         System.out.println("Xml parsing.");
+        service.parseXml();
 
         System.out.println("Connection to DB.");
         service.connectDB();
 
         System.out.println("Migration to DB.");
+        service.migrateToDB();
 
         System.out.println("Close DB connection.");
         service.closeDB();

@@ -7,16 +7,5 @@ ToDO:
     + переделать классы под xml
     + xml-xsd проверка
     - миграция в БД
-    - логгирование
+    + логгирование
     - jar
-
-    dao:
-        - xml
-        - db
-
-    service:
-        - migration
-        - validation
-
-    main:
-        - service calling

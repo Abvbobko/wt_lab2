@@ -19,6 +19,10 @@ public class DB {
 
     private Connection connection = null;
 
+    public Connection getConnection(){
+        return connection;
+    }
+
     void connect() {
         try {
             Class.forName("com.mysql.jdbc.Driver");

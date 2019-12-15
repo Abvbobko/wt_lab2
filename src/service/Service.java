@@ -25,7 +25,7 @@ public class Service {
     private DAO dao = DAO.getInstance();
     private static final Logger logger = LogManager.getLogger();
 
-    public Boolean validateXml(){
+    public void validateXml(){
         try {
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -34,9 +34,7 @@ public class Service {
             validator.validate(new StreamSource(new File(DAO.XML_FILE_PATH)));
         } catch (IOException | SAXException e) {
             logger.error(e.getMessage());
-            return false;
         }
-        return true;
     }
 
     public void connectDB() {
@@ -47,4 +45,11 @@ public class Service {
         dao.closeDBConnection();
     }
 
+    public void parseXml() {
+        dao.parseXml();
+    }
+
+    public void migrateToDB() {
+
+    }
 }
