@@ -9,10 +9,19 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
-import dao.DB;
+import dao.DAO;
 import org.xml.sax.SAXException;
 
 public class Service {
+
+    private static final Service service = new Service();
+    private Service() {}
+    public static Service getInstance(){
+        return service;
+    }
+
+    private DAO dao = DAO.getInstance();
+
     public Boolean validate(String xsdPath, String xmlPath){
         try {
             SchemaFactory factory =
@@ -28,8 +37,9 @@ public class Service {
     }
 
     public void connectDB() {
-        DB dao = new DB();
-        dao.dbConnect();
+        dao.connectToDB();
+        //DB dao = new DB();
+        ;
     }
 
 }

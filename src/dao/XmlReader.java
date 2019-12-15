@@ -26,13 +26,17 @@ public class XmlReader {
     private List<Pilot> pilots;
     private List<Ticket> tickets;
 
-    public XmlReader(String file) throws DataSourceException {
+    public XmlReader(String file) {
         logger.info("Xml reader starts parsing file - " + file + ".");
-        userParser = new UserParser(file);
-        flightParser = new FlightParser(file);
-        pilotParser = new PilotParser(file);
-        planeParser = new PlaneParser(file);
-        ticketParser = new TicketParser(file);
+        try {
+            userParser = new UserParser(file);
+            flightParser = new FlightParser(file);
+            pilotParser = new PilotParser(file);
+            planeParser = new PlaneParser(file);
+            ticketParser = new TicketParser(file);
+        } catch (DataSourceException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     public List<User> getUsers() {

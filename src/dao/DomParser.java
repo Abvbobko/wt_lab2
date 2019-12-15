@@ -16,7 +16,7 @@ public class DomParser {
     private static DomParser instance = new DomParser();
     private static final Logger logger = LogManager.getLogger();
 
-    public static DomParser getInstance() {
+    static DomParser getInstance() {
         return instance;
     }
 

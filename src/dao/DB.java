@@ -9,16 +9,17 @@ import org.apache.logging.log4j.Logger;
 
 public class DB {
 
-    private DB db = new DB();
+    private static final DB db = new DB();
     private DB() {}
-    public DB getInstance(){
+    static DB getInstance(){
         return db;
     }
+
     private static final Logger logger = LogManager.getLogger();
 
     private Connection connection = null;
 
-    public void connect() {
+    void connect() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -31,16 +32,17 @@ public class DB {
             connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
             logger.info("Connection to database was successfully.");
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            logger.error(e.getMessage());
+        }
+    }
 
+    void closeConnection() {
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                logger.error(e.getMessage());
+            }
         }
     }
 
