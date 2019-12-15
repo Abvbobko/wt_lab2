@@ -5,10 +5,19 @@ import java.time.LocalDate;
 
 public class Plane implements Serializable, Comparable {
     private int numberOfSeats;
+    private int id;
 
-    Plane() {}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    Plane(int numberOfSeats){
+    public int getId() {
+        return id;
+    }
+
+    public Plane() {}
+
+    public Plane(int numberOfSeats){
         this.numberOfSeats = numberOfSeats;
 
     }
