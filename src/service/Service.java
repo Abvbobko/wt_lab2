@@ -9,7 +9,7 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
-import dao.Dao;
+import dao.DB;
 import org.xml.sax.SAXException;
 
 public class Service {
@@ -28,7 +28,7 @@ public class Service {
     }
 
     public void connectDB() {
-        Dao dao = new Dao();
+        DB dao = new DB();
         dao.dbConnect();
     }
 

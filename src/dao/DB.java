@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 
-public class Dao {
+public class DB {
 
     public void dbConnect() {
         Connection con = null;
