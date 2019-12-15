@@ -30,7 +30,7 @@ public class UserParser {
         logger.info("Users list created.");
         try {
             Document document = DomParser.parseXmlFile(xmlFile);
-            NodeList usersNodes = document.getDocumentElement().getElementsByTagName("User");
+            NodeList usersNodes = document.getDocumentElement().getElementsByTagName("user");
             for (int i = 0; i < usersNodes.getLength(); i++) {
                 if (usersNodes.item(i).getNodeType() != Node.TEXT_NODE) {
                     users.add(getUserFromNode(usersNodes.item(i)));

@@ -40,17 +40,16 @@ public class TicketsMigration {
                     throw new AlreadyExistsException("Such ticket already exists!");
 
                 preparedStatement = connection.prepareStatement(
-                        "INSERT INTO tickets (id, price, place, flightID, User_ID) VALUES (?,?,?,?,?);");
+                        "INSERT INTO tickets (id, price, flightID, User_ID, place) VALUES (?,?,?,?,?);");
                 preparedStatement.setInt(1, ticket.getId());
                 preparedStatement.setInt(2, ticket.getPrice());
-                preparedStatement.setInt(3, ticket.getPlace());
-                preparedStatement.setInt(4, ticket.getFlightID());
-                preparedStatement.setInt(5, ticket.getUserID());
+                preparedStatement.setInt(3, ticket.getFlightID());
+                preparedStatement.setInt(4, ticket.getUserID());
+                preparedStatement.setInt(5, ticket.getPlace());
                 preparedStatement.executeUpdate();
                 logger.info("Ticket was migrated to database.");
             } catch (SQLException e) {
                 logger.error("SQLException: ", e);
-                System.out.println(e.getMessage());
             } catch (AlreadyExistsException e) {
                 logger.error(e.getMessage());
             } finally {

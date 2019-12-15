@@ -31,11 +31,12 @@ public class DB {
                     + "?useUnicode=true&useJDBCCompliantTimezoneShift=true"
                     + "&useLegacyDatetimeCode=false&serverTimezone=UTC";
             String LOGIN = "root";
-            String PASSWORD = "";
+            String PASSWORD = "iam10903992";
 
             connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
             logger.info("Connection to database was successfully.");
         } catch (ClassNotFoundException | SQLException e) {
+
             logger.error(e.getMessage());
         }
     }
@@ -45,6 +46,7 @@ public class DB {
             try {
                 connection.close();
             } catch (SQLException e) {
+                System.out.println(e.getMessage());
                 logger.error(e.getMessage());
             }
         }

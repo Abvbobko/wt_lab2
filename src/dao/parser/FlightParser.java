@@ -30,7 +30,7 @@ public class FlightParser {
         logger.info("Flights list created.");
         try {
             Document document = DomParser.parseXmlFile(xmlFile);
-            NodeList flightsNodes = document.getDocumentElement().getElementsByTagName("Flight");
+            NodeList flightsNodes = document.getDocumentElement().getElementsByTagName("flight");
             for (int i = 0; i < flightsNodes.getLength(); i++) {
                 if (flightsNodes.item(i).getNodeType() != Node.TEXT_NODE) {
                     flights.add(getFlightFromNode(flightsNodes.item(i)));
@@ -39,6 +39,7 @@ public class FlightParser {
             }
             logger.info("All flights were got by parser (" + flights.size() + ")");
         } catch (SAXException | IOException | ParserConfigurationException e) {
+            System.out.println(e.getMessage());
             throw new DataSourceException("File " + xmlFile.getName() + " not found or is incorrect.");
         }
     }

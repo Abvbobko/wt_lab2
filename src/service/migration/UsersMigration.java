@@ -40,16 +40,15 @@ public class UsersMigration {
                     throw new AlreadyExistsException("Such user already exists!");
 
                 preparedStatement = connection.prepareStatement(
-                        "INSERT INTO users (id, admin, login, passwordHash) VALUES (?,?,?,?);");
+                        "INSERT INTO users (id, login, passwordHash, admin) VALUES (?,?,?,?);");
                 preparedStatement.setInt(1, user.getId());
-                preparedStatement.setBoolean(2, user.isAdmin());
-                preparedStatement.setString(3, user.getLogin());
-                preparedStatement.setString(4, user.getPasswordHash());
+                preparedStatement.setString(2, user.getLogin());
+                preparedStatement.setString(3, user.getPasswordHash());
+                preparedStatement.setBoolean(4, user.isAdmin());
                 preparedStatement.executeUpdate();
                 logger.info("User was migrated to database.");
             } catch (SQLException e) {
                 logger.error("SQLException: ", e);
-                System.out.println(e.getMessage());
             } catch (AlreadyExistsException e) {
                 logger.error(e.getMessage());
             } finally {

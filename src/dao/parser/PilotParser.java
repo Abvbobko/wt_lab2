@@ -30,7 +30,7 @@ public class PilotParser {
         logger.info("Pilots list created.");
         try {
             Document document = DomParser.parseXmlFile(xmlFile);
-            NodeList pilotsNodes = document.getDocumentElement().getElementsByTagName("Pilot");
+            NodeList pilotsNodes = document.getDocumentElement().getElementsByTagName("pilot");
             for (int i = 0; i < pilotsNodes.getLength(); i++) {
                 if (pilotsNodes.item(i).getNodeType() != Node.TEXT_NODE) {
                     pilots.add(getPilotFromNode(pilotsNodes.item(i)));

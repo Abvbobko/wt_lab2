@@ -30,7 +30,7 @@ public class PlaneParser {
         logger.info("Planes list created.");
         try {
             Document document = DomParser.parseXmlFile(xmlFile);
-            NodeList planesNodes = document.getDocumentElement().getElementsByTagName("Plane");
+            NodeList planesNodes = document.getDocumentElement().getElementsByTagName("plane");
             for (int i = 0; i < planesNodes.getLength(); i++) {
                 if (planesNodes.item(i).getNodeType() != Node.TEXT_NODE) {
                     planes.add(getPlaneFromNode(planesNodes.item(i)));

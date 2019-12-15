@@ -30,7 +30,7 @@ public class TicketParser {
         logger.info("Tickets list created.");
         try {
             Document document = DomParser.parseXmlFile(xmlFile);
-            NodeList ticketsNodes = document.getDocumentElement().getElementsByTagName("Ticket");
+            NodeList ticketsNodes = document.getDocumentElement().getElementsByTagName("ticket");
             for (int i = 0; i < ticketsNodes.getLength(); i++) {
                 if (ticketsNodes.item(i).getNodeType() != Node.TEXT_NODE) {
                     tickets.add(getTicketFromNode(ticketsNodes.item(i)));

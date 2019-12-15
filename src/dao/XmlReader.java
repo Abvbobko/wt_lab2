@@ -30,6 +30,7 @@ public class XmlReader {
         logger.info("Xml reader starts parsing file - " + file + ".");
         try {
             userParser = new UserParser(file);
+            //System.out.println(userParser.getUsers());
             flightParser = new FlightParser(file);
             pilotParser = new PilotParser(file);
             planeParser = new PlaneParser(file);

@@ -45,7 +45,6 @@ public class PlanesMigration {
                 logger.info("Plane was migrated to database.");
             } catch (SQLException e) {
                 logger.error("SQLException: ", e);
-                System.out.println(e.getMessage());
             } catch (AlreadyExistsException e) {
                 logger.error(e.getMessage());
             } finally {
