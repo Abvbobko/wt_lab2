@@ -7,10 +7,19 @@ public class Pilot implements Serializable, Comparable {
     private String surname;
     private String middleName;
     private float experience;
+    private int id;
 
-    Pilot() {}
+    public int getId() {
+        return id;
+    }
 
-    Pilot(String name, String surname, String middleName, float experience){
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Pilot() {}
+
+    public Pilot(String name, String surname, String middleName, float experience){
         this.name = name;
         this.surname = surname;
         this.middleName = middleName;
